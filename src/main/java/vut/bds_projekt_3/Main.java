@@ -23,7 +23,6 @@ public class Main extends Application {
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.show();
-
     }
 
     public void changeScene(String fxml) throws IOException{

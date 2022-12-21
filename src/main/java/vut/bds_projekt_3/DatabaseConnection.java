@@ -1,24 +1,16 @@
 package vut.bds_projekt_3;
+import java.sql.*;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-
-/*
 public class DatabaseConnection {
-    public Connection databaselink;
+    public Connection databaseLink;
+    public Connection getConnection() throws SQLException {
 
-    public Connection getConnection(){
-        String databaseName = "";
-        String databaseUser = "";
-        String databasePassword = "";
-        String url = "jdbc:postgre://localhost" + databaseName;
+        String url = "jdbc:postgresql://localhost:5432/postgres";
+        String user = "postgres";
+        String password = "admin123";
 
-        try{
-            Class.forName("")
-        }catch(Exception e){
-            e.printStackTrace();
-            e.getCause();
-        }
+        databaseLink= DriverManager.getConnection(url, user, password);
+
+        return databaseLink;
     }
 }
-*/
