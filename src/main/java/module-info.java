@@ -8,4 +8,6 @@ module vut.bds_projekt_3 {
 
     opens vut.bds_projekt_3 to javafx.fxml;
     exports vut.bds_projekt_3;
+    exports vut.bds_projekt_3.Controller;
+    opens vut.bds_projekt_3.Controller to javafx.fxml;
 }

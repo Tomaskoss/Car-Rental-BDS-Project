@@ -6,11 +6,12 @@ public class DatabaseConnection {
     public Connection getConnection() throws SQLException {
 
         String url = "jdbc:postgresql://localhost:5432/postgres";
-        String user = "postgres";
-        String password = "admin123";
+        String user = "db-rental"; //postgres (original prihlasovanie) // db-renal
+        String password = "test123"; //(admin123 heslo k postgres)      //test123
 
         databaseLink= DriverManager.getConnection(url, user, password);
 
         return databaseLink;
     }
+
 }

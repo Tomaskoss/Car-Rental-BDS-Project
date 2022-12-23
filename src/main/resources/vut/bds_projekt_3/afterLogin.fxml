@@ -8,24 +8,29 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vut.bds_projekt_3.AfterLogin">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vut.bds_projekt_3.Controller.AfterLoginController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #383b3c;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="logoImageView" fitHeight="336.0" fitWidth="168.0" layoutX="188.0" layoutY="-122.0" pickOnBounds="true" preserveRatio="true" rotate="90.0" translateX="40.0" translateY="40.0">
+            <ImageView fx:id="logoImageView" fitHeight="400.0" fitWidth="201.0" layoutX="-40.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true" translateX="40.0" translateY="40.0">
                <image>
-                  <Image url="@../../../../../images/logo.png" />
+                  <Image url="@logo.png" />
                </image>
             </ImageView>
-            <Button fx:id="logout" layoutX="260.0" layoutY="300.0" mnemonicParsing="false" onAction="#logOutOnAction" style="-fx-background-color: #171d1d;" text="Log Out" textFill="#cecece">
+            <Button fx:id="logout" layoutX="225.0" layoutY="300.0" mnemonicParsing="false" onAction="#logOutOnAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #171d1d;" text="Log Out" textFill="#cecece">
                <font>
                   <Font name="Tw Cen MT Condensed" size="22.0" />
                </font></Button>
-            <Text layoutX="184.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100Ry Rental Database" textAlignment="CENTER" wrappingWidth="231.828125">
+            <Text layoutX="259.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100Ry Rental Database" textAlignment="CENTER" wrappingWidth="231.828125">
                <font>
                   <Font name="Tw Cen MT Condensed Extra Bold" size="36.0" />
                </font>
             </Text>
+            <Button fx:id="catalog" layoutX="400.0" layoutY="300.0" mnemonicParsing="false" onAction="#CatalogOnAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #171d1d;" text="Catalog of cars" textFill="#cecece">
+               <font>
+                  <Font name="Tw Cen MT Condensed" size="22.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </center>
