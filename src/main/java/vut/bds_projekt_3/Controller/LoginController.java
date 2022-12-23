@@ -1,4 +1,4 @@
-package vut.bds_projekt_3;
+package vut.bds_projekt_3.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,6 +10,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import vut.bds_projekt_3.DatabaseConnection;
+import vut.bds_projekt_3.App;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,7 +22,7 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.net.URL;
 
-public class MainController implements Initializable {
+public class LoginController implements Initializable {
 
     @FXML
     private Button cancel;
@@ -66,7 +68,7 @@ public class MainController implements Initializable {
     }
 
     public void validatelogin() throws IOException, SQLException {
-        Main m = new Main();
+        App m = new App();
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
@@ -78,7 +80,7 @@ public class MainController implements Initializable {
             while(queryResult.next()){
                 if (queryResult.getInt(1) ==1 ){
                     status_message.setText("congrats!");
-                    m.changeScene("afterLogin.fxml");
+                    m.changeScene("afterLogin.fxml",600,400);
                 }else{
                     status_message.setText("Invalid Login, please try again");
                 }

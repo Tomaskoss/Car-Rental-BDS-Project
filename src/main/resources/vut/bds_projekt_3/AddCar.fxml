@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #383b3c;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vut.bds_projekt_3.Controller.AddCarController">
+   <children>
+      <Button fx:id="Back" layoutX="220.0" layoutY="288.0" mnemonicParsing="false" onAction="#BackOnAction" prefHeight="40.0" prefWidth="77.0" style="-fx-background-color: #171d1d;" text="Back" textFill="#cecece">
+         <font>
+            <Font name="Tw Cen MT Condensed" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="Add" layoutX="480.0" layoutY="288.0" mnemonicParsing="false" onAction="#AddOnAction" prefHeight="40.0" prefWidth="77.0" style="-fx-background-color: #171d1d;" text="Add" textFill="#cecece">
+         <font>
+            <Font name="Tw Cen MT Condensed" size="22.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER_RIGHT" layoutX="60.0" layoutY="50.0" prefHeight="26.0" prefWidth="157.0" text="Vin ID:" textAlignment="RIGHT" textFill="#cecece">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="60.0" layoutY="100.0" prefHeight="26.0" prefWidth="157.0" text="Brand Name:" textAlignment="RIGHT" textFill="#cecece">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="60.0" layoutY="150.0" prefHeight="26.0" prefWidth="157.0" text="Vehicle type:" textAlignment="RIGHT" textFill="#cecece">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="60.0" layoutY="200.0" prefHeight="26.0" prefWidth="157.0" text="Fuel Type:" textAlignment="CENTER" textFill="#cecece" wrapText="true">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="60.0" layoutY="250.0" prefHeight="26.0" prefWidth="157.0" text="Color :" textAlignment="RIGHT" textFill="#cecece">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="rented_car_id_vin_number_" layoutX="220.0" layoutY="40.0" prefHeight="8.0" prefWidth="337.0" promptText="Vin ID" style="-fx-background-color: #171d1d; -fx-text-fill: #cecece;">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="brand_name_id" layoutX="220.0" layoutY="90.0" prefHeight="42.0" prefWidth="337.0" promptText="Brand name ID" style="-fx-background-color: #171d1d; -fx-text-fill: #cecece;">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="vehicle_type_id" layoutX="220.0" layoutY="140.0" prefHeight="42.0" prefWidth="337.0" promptText="Vehicle type ID" style="-fx-background-color: #171d1d; -fx-text-fill: #cecece;">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="fuel_type_id" layoutX="220.0" layoutY="190.0" prefHeight="42.0" prefWidth="337.0" promptText="Fuel Type ID" style="-fx-background-color: #171d1d; -fx-text-fill: #cecece;">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="color_id" layoutX="220.0" layoutY="240.0" prefHeight="42.0" prefWidth="337.0" promptText="Color ID" style="-fx-background-color: #171d1d; -fx-text-fill: #cecece;">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+         </font>
+      </TextField>
+      <Label fx:id="status_message" layoutX="14.0" layoutY="288.0" prefHeight="92.0" prefWidth="200.0" textFill="#cecece" wrapText="true">
+         <font>
+            <Font name="Tw Cen MT Condensed" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="Delete" layoutX="396.0" layoutY="288.0" mnemonicParsing="false" onAction="#DeleteOnAction" prefHeight="40.0" prefWidth="77.0" style="-fx-background-color: #171d1d;" text="Delete" textFill="#cecece">
+         <font>
+            <Font name="Tw Cen MT Condensed" size="22.0" />
+         </font>
+      </Button>
+      <Button layoutX="310.0" layoutY="288.0" mnemonicParsing="false" onAction="#UpdateOnAction" style="-fx-background-color: #171d1d;" text="Update" textFill="#cecece">
+         <font>
+            <Font name="Tw Cen MT Condensed" size="22.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

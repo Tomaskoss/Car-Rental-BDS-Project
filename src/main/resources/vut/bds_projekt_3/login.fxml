@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #383b3c;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vut.bds_projekt_3.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #383b3c;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vut.bds_projekt_3.Controller.LoginController">
    <left>
       <AnchorPane prefHeight="400.0" prefWidth="165.0" BorderPane.alignment="CENTER">
          <children>
@@ -40,7 +40,10 @@
                <font>
                   <Font name="Tw Cen MT Condensed Extra Bold" size="12.0" />
                </font></TextField>
-            <Label fx:id="status_message" alignment="CENTER" contentDisplay="CENTER" layoutX="46.0" layoutY="130.0" prefHeight="54.0" prefWidth="348.0" textAlignment="CENTER" textFill="#cecece" />
+            <Label fx:id="status_message" alignment="CENTER" contentDisplay="CENTER" layoutX="46.0" layoutY="130.0" prefHeight="54.0" prefWidth="348.0" textAlignment="CENTER" textFill="#cecece">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="28.0" />
+               </font></Label>
             <Button fx:id="login" layoutX="259.0" layoutY="297.0" mnemonicParsing="false" onAction="#loginOnAction" prefHeight="22.0" prefWidth="83.0" style="-fx-background-color: #171d1d;" text="Log In" textFill="#cecece">
                <font>
                   <Font name="Tw Cen MT Condensed" size="12.0" />
