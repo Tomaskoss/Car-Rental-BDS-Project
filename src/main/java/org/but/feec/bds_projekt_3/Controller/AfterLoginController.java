@@ -1,10 +1,10 @@
-package vut.bds_projekt_3.Controller;
+package org.but.feec.bds_projekt_3.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
-import vut.bds_projekt_3.App;
+import org.but.feec.bds_projekt_3.App;
 
 import java.io.IOException;
 
@@ -13,6 +13,9 @@ public class AfterLoginController {
 
         @FXML
         private Button catalog;
+
+        @FXML
+        private Button CustomerView;
 
         @FXML
         private ImageView logoImageView;
@@ -30,6 +33,11 @@ public class AfterLoginController {
         public void CatalogOnAction(ActionEvent event) throws IOException{
                 App m = new App();
                 m.changeScene("CarRental.fxml",800,600);
+        }
+
+        public void CustomerViewOnAction(ActionEvent event) throws IOException {
+                App m = new App();
+                m.changeScene("CustomerView.fxml",800,600);
 
         }
 }

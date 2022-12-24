@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vut.bds_projekt_3.Controller.AfterLoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.but.feec.bds_projekt_3.Controller.AfterLoginController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #383b3c;" BorderPane.alignment="CENTER">
          <children>
@@ -27,6 +27,11 @@
                </font>
             </Text>
             <Button fx:id="catalog" layoutX="400.0" layoutY="300.0" mnemonicParsing="false" onAction="#CatalogOnAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #171d1d;" text="Catalog of cars" textFill="#cecece">
+               <font>
+                  <Font name="Tw Cen MT Condensed" size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="CustomerView" layoutX="400.0" layoutY="232.0" mnemonicParsing="false" onAction="#CustomerViewOnAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #171d1d;" text="Customer View" textFill="#cecece">
                <font>
                   <Font name="Tw Cen MT Condensed" size="22.0" />
                </font>

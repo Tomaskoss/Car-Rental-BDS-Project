@@ -1,4 +1,4 @@
-package vut.bds_projekt_3.Controller;
+package org.but.feec.bds_projekt_3.Controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,8 +12,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import vut.bds_projekt_3.DatabaseConnection;
-import vut.bds_projekt_3.App;
+import org.but.feec.bds_projekt_3.Data.Car;
+import org.but.feec.bds_projekt_3.config.DatabaseConnection;
+import org.but.feec.bds_projekt_3.App;
 
 import java.io.IOException;
 import java.net.URL;
@@ -133,7 +134,7 @@ public class CarRentalController implements Initializable {
                         return true; // Means we found a match in Fuel type
                     }else if (Car.getColor().toLowerCase().indexOf(searchKeyword) >-1 ){
                         return true; // Means we found a match in Color
-                    }else if (Car.vehicle_type.toLowerCase().indexOf(searchKeyword) >-1 ){
+                    }else if (Car.getVehicle_type().toLowerCase().indexOf(searchKeyword) >-1 ){
                         return true; // Means we found a match in vehicle type
                     }else
                         return false; // no match found
