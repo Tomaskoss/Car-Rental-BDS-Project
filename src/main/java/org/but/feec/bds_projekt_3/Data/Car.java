@@ -1,4 +1,4 @@
-package vut.bds_projekt_3.Controller;
+package org.but.feec.bds_projekt_3.Data;
 
 public class Car {
 

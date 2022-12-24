@@ -1,12 +1,12 @@
-package vut.bds_projekt_3.Controller;
+package org.but.feec.bds_projekt_3.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import vut.bds_projekt_3.DatabaseConnection;
-import vut.bds_projekt_3.App;
+import org.but.feec.bds_projekt_3.App;
+import org.but.feec.bds_projekt_3.config.DatabaseConnection;
 
 import java.io.IOException;
 import java.sql.Connection;

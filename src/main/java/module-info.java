@@ -6,8 +6,12 @@ module vut.bds_projekt_3 {
     requires java.sql;
 
 
-    opens vut.bds_projekt_3 to javafx.fxml;
-    exports vut.bds_projekt_3;
-    exports vut.bds_projekt_3.Controller;
-    opens vut.bds_projekt_3.Controller to javafx.fxml;
+    opens org.but.feec.bds_projekt_3 to javafx.fxml;
+    exports org.but.feec.bds_projekt_3;
+    exports org.but.feec.bds_projekt_3.Controller;
+    opens org.but.feec.bds_projekt_3.Controller to javafx.fxml;
+    exports org.but.feec.bds_projekt_3.config;
+    opens org.but.feec.bds_projekt_3.config to javafx.fxml;
+    exports org.but.feec.bds_projekt_3.Data;
+    opens org.but.feec.bds_projekt_3.Data to javafx.fxml;
 }
