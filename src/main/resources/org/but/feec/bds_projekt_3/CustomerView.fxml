@@ -45,12 +45,12 @@
                   <Font name="Tw Cen MT Condensed Extra Bold" size="32.0" />
                </font>
             </Label>
-            <TextField fx:id="inputField" layoutX="521.0" layoutY="28.0" prefHeight="25.0" prefWidth="234.0" style="-fx-background-color: #cecece;" />
-            <Button fx:id="confirmButton" layoutX="385.0" layoutY="17.0" mnemonicParsing="false" onAction="#ConfirmOnAction" prefHeight="47.0" prefWidth="122.0" style="-fx-background-color: #171d1d;" text="Confirm" textFill="#cecece">
+            <TextField fx:id="inputField" layoutX="521.0" layoutY="28.0" prefHeight="30.0" prefWidth="234.0" style="-fx-background-color: #cecece;" />
+            <Label alignment="CENTER_RIGHT" layoutX="378.0" layoutY="15.0" prefHeight="51.0" prefWidth="143.0" style="-fx-background-color: #383b3c;" text="Search:" textAlignment="CENTER" textFill="#cecece">
                <font>
-                  <Font name="Tw Cen MT Condensed Extra Bold" size="26.0" />
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="32.0" />
                </font>
-            </Button>
+            </Label>
          </children>
       </AnchorPane>
    </top>

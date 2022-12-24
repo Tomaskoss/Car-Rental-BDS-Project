@@ -36,6 +36,11 @@
                   <Font name="Tw Cen MT Condensed" size="22.0" />
                </font>
             </Button>
+            <Button fx:id="dummy_table" layoutX="225.0" layoutY="232.0" mnemonicParsing="false" onAction="#DummyOnAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #171d1d;" text="Dummy Table" textFill="#cecece">
+               <font>
+                  <Font name="Tw Cen MT Condensed" size="22.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </center>

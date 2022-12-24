@@ -7,11 +7,9 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import org.but.feec.bds_projekt_3.Data.Car;
 import org.but.feec.bds_projekt_3.config.DatabaseConnection;
 import org.but.feec.bds_projekt_3.App;
@@ -31,8 +29,13 @@ public class CarRentalController implements Initializable {
     private Button AddCar;
 
     @FXML
+    private Button RentCar;
+
+    @FXML
     private Button BackToMenu;
 
+    @FXML
+    private Label status_message;
 
     @FXML
     private TableView<Car> Rentable_car_table;
@@ -52,6 +55,8 @@ public class CarRentalController implements Initializable {
     @FXML
     private TableColumn<Car,String> vehicle_type;
     @FXML
+    private TableColumn<Car,Boolean> availability;
+    @FXML
     private TextField keywordTextField;
 
     ObservableList<Car> carObservableList = FXCollections.observableArrayList();
@@ -67,9 +72,16 @@ public class CarRentalController implements Initializable {
 
         App m = new App();
 
-        m.changeScene("afterLogin.fxml",600,400);
+        m.changeScene("AfterLogin.fxml",600,400);
 
     }
+    @FXML
+    void RentOnAction(ActionEvent event) throws IOException {
+        App m = new App();
+
+        m.changeScene("RentCar.fxml",600,400);
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -82,7 +94,7 @@ public class CarRentalController implements Initializable {
             throw new RuntimeException(e);
         }
             //SQL Query-Executed in the backend database
-        String productViewQuery= "SELECT rented_car_id_vin_number_,brand_name,fuel_type,color,vehicle_type FROM mydb.rented_car\n" +
+        String productViewQuery= "SELECT rented_car_id_vin_number_,brand_name,fuel_type,color,vehicle_type,availability FROM mydb.rented_car\n" +
                 "LEFT JOIN mydb.brand_of_vehicle\n" +
                 "ON brand_of_vehicle.brand_id = rented_car.brand_name_id\n" +
                 "LEFT JOIN mydb.fuel_type \n" +
@@ -101,8 +113,9 @@ public class CarRentalController implements Initializable {
                 String queryFuelType = queryOutput.getString("fuel_type");
                 String queryColor = queryOutput.getString("color");
                 String queryVehicleType = queryOutput.getString("vehicle_type");
+                Boolean queryAvailability= queryOutput.getBoolean("availability");
                     //Populate the ObservableList
-                carObservableList.add(new Car(queryVin_id, queryBrandName,queryVehicleType ,queryColor,queryFuelType));
+                carObservableList.add(new Car(queryVin_id, queryBrandName,queryVehicleType ,queryColor,queryFuelType,queryAvailability));
 
             }
 
@@ -113,7 +126,7 @@ public class CarRentalController implements Initializable {
             vehicle_type.setCellValueFactory(new PropertyValueFactory<>("vehicle_type"));
             fuel_type.setCellValueFactory(new PropertyValueFactory<>("fuel_type"));
             color.setCellValueFactory(new PropertyValueFactory<>("color"));
-
+            availability.setCellValueFactory(new PropertyValueFactory<>("availability"));
             Rentable_car_table.setItems(carObservableList);
             //Initial filtered list
             FilteredList<Car> filteredData = new FilteredList<>(carObservableList, b -> true);
@@ -155,4 +168,5 @@ public class CarRentalController implements Initializable {
         }
     }
 }
+
 

@@ -38,9 +38,6 @@ public class CustomerViewController implements Initializable {
     private TableColumn<CustomerView, Integer> amount;
 
     @FXML
-    private Button confirmButton;
-
-    @FXML
     private TableColumn<CustomerView, String> email;
 
     @FXML
@@ -65,12 +62,7 @@ public class CustomerViewController implements Initializable {
     void BackToMenuOnAction(ActionEvent event) throws IOException {
         App m = new App();
 
-        m.changeScene("afterLogin.fxml",600,400);
-    }
-
-    @FXML
-    void ConfirmOnAction(ActionEvent event) {
-        String input = inputField.getText();
+        m.changeScene("AfterLogin.fxml",600,400);
     }
 
     @Override
