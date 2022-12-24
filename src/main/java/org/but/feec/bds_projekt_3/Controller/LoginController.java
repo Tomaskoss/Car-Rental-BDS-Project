@@ -8,8 +8,10 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import org.but.feec.bds_projekt_3.config.DatabaseConnection;
 import org.but.feec.bds_projekt_3.App;
+import org.but.feec.bds_projekt_3.config.DatabaseConnection;
+
+
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -75,9 +77,11 @@ public class LoginController /*implements Initializable*/ {
             while(queryResult.next()){
                 if (queryResult.getInt(1) ==1 ){
                     status_message.setText("congrats!");
-                    m.changeScene("afterLogin.fxml",600,400);
+                    m.changeScene("AfterLogin.fxml",600,400);
+
                 }else{
                     status_message.setText("Invalid Login, please try again");
+
                 }
 
             }

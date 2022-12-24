@@ -19,7 +19,8 @@
                 <TableColumn fx:id="brand_name" prefWidth="160.0" text="Brand name" />
                   <TableColumn fx:id="vehicle_type" prefWidth="160.0" text="Vehicle type" />
                   <TableColumn fx:id="color" prefWidth="160.0" text="Color" />
-                  <TableColumn fx:id="fuel_type" prefWidth="155.0" text="Fuel type" />
+                  <TableColumn fx:id="fuel_type" prefWidth="82.0" text="Fuel type" />
+                  <TableColumn fx:id="availability" prefWidth="77.0" text="Availability" />
               </columns>
             </TableView>
          </children>
@@ -54,11 +55,21 @@
                   <Font name="Tw Cen MT Condensed" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="AddCar" layoutX="666.0" layoutY="25.0" mnemonicParsing="false" onAction="#AddCarOnAction" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #171d1d;" text="Manage car" textFill="#cecece">
+            <Button fx:id="AddCar" layoutX="680.0" layoutY="25.0" mnemonicParsing="false" onAction="#AddCarOnAction" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #171d1d;" text="Manage car" textFill="#cecece">
                <font>
                   <Font name="Tw Cen MT Condensed" size="20.0" />
                </font>
             </Button>
+            <Button fx:id="RentCar" layoutX="540.0" layoutY="25.0" mnemonicParsing="false" onAction="#RentOnAction" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #171d1d;" text="Rent car" textFill="#cecece">
+               <font>
+                  <Font name="Tw Cen MT Condensed" size="20.0" />
+               </font>
+            </Button>
+            <Label fx:id="status_message" alignment="CENTER" contentDisplay="CENTER" layoutX="147.0" layoutY="18.0" prefHeight="54.0" prefWidth="152.0" textAlignment="CENTER" textFill="#cecece">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="28.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
    </bottom>
 </BorderPane>

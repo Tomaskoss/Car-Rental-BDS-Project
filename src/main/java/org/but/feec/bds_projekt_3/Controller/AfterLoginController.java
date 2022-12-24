@@ -5,8 +5,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import org.but.feec.bds_projekt_3.App;
+import org.but.feec.bds_projekt_3.config.DatabaseConnection;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class AfterLoginController {
 
@@ -23,6 +28,9 @@ public class AfterLoginController {
         @FXML
         private Button logout;
 
+        @FXML
+        private Button dummy_table;
+
 
 
 
@@ -38,6 +46,13 @@ public class AfterLoginController {
         public void CustomerViewOnAction(ActionEvent event) throws IOException {
                 App m = new App();
                 m.changeScene("CustomerView.fxml",800,600);
+
+        }
+
+        @FXML
+        void DummyOnAction(ActionEvent event) throws IOException, SQLException {
+                App m = new App();
+                m.changeScene("DummyTable.fxml",800,600);
 
         }
 }

@@ -6,8 +6,8 @@ public class DatabaseConnection {
     public Connection getConnection() throws SQLException {
 
         String url = "jdbc:postgresql://localhost:5432/postgres";
-        String user = "db-rental"; //postgres (original prihlasovanie) // db-renal
-        String password = "test123"; //(admin123 heslo k postgres)      //test123
+        String user = "db-rental"; //postgres (original prihlasovanie) // db-renal login: j
+        String password = "test123"; //(admin123 heslo k postgres)      //test123  password : t for gui
 
         databaseLink= DriverManager.getConnection(url, user, password);
 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #383b3c;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.but.feec.bds_projekt_3.Controller.RentCarController">
+   <children>
+      <TextField fx:id="rented_car_id_vin_number_" layoutX="219.0" layoutY="45.0" prefHeight="8.0" prefWidth="337.0" promptText="Vin ID" style="-fx-background-color: #171d1d; -fx-text-fill: #cecece;">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER_RIGHT" layoutX="62.0" layoutY="53.0" prefHeight="26.0" prefWidth="157.0" text="Vin ID:" textAlignment="RIGHT" textFill="#cecece">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="62.0" layoutY="115.0" prefHeight="26.0" prefWidth="157.0" text="Rental Date" textAlignment="RIGHT" textFill="#cecece">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="62.0" layoutY="174.0" prefHeight="26.0" prefWidth="157.0" text="Return Date" textAlignment="RIGHT" textFill="#cecece">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="rental_date" layoutX="219.0" layoutY="107.0" prefHeight="8.0" prefWidth="337.0" promptText="yy-mm-dd" style="-fx-background-color: #171d1d; -fx-text-fill: #cecece;">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="return_date" layoutX="219.0" layoutY="166.0" prefHeight="8.0" prefWidth="337.0" promptText="yy-mm-dd" style="-fx-background-color: #171d1d; -fx-text-fill: #cecece;">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+         </font>
+      </TextField>
+      <Button fx:id="rent" layoutX="501.0" layoutY="325.0" mnemonicParsing="false" onAction="#RentOnAction" prefHeight="40.0" prefWidth="77.0" style="-fx-background-color: #171d1d;" text="Rent" textFill="#cecece">
+         <font>
+            <Font name="Tw Cen MT Condensed" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="Back" layoutX="402.0" layoutY="325.0" mnemonicParsing="false" onAction="#BackOnAction" prefHeight="40.0" prefWidth="77.0" style="-fx-background-color: #171d1d;" text="Back" textFill="#cecece">
+         <font>
+            <Font name="Tw Cen MT Condensed" size="22.0" />
+         </font>
+      </Button>
+      <Label fx:id="status_message" alignment="CENTER" contentDisplay="CENTER" layoutX="30.0" layoutY="294.0" prefHeight="71.0" prefWidth="365.0" textAlignment="CENTER" textFill="#cecece" wrapText="true">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="customer_id" layoutX="219.0" layoutY="222.0" prefHeight="8.0" prefWidth="337.0" promptText="Customer_id" style="-fx-background-color: #171d1d; -fx-text-fill: #cecece;">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER_RIGHT" layoutX="62.0" layoutY="230.0" prefHeight="26.0" prefWidth="157.0" text="Customer ID:" textAlignment="RIGHT" textFill="#cecece">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
