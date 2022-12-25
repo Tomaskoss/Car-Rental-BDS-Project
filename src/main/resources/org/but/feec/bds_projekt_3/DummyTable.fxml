@@ -15,8 +15,8 @@
             <children>
                 <TableView fx:id="dummy_customer_view" layoutY="40.0" opacity="0.65" prefHeight="439.0" prefWidth="800.0" style="-fx-background-color: #cecece;">
                     <columns>
-                        <TableColumn fx:id="first_name" prefWidth="130.0" text="Name" />
-                        <TableColumn fx:id="last_name" prefWidth="130.0" text="Surname" />
+                        <TableColumn fx:id="name" prefWidth="130.0" text="Name" />
+                        <TableColumn fx:id="surname" prefWidth="130.0" text="Surname" />
                         <TableColumn fx:id="email" prefWidth="149.0" text="Email" />
                     </columns>
                 </TableView>

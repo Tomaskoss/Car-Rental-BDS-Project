@@ -64,7 +64,7 @@ public class CarRentalController implements Initializable {
     @FXML
     void AddCarOnAction(ActionEvent event) throws IOException {
         App m = new App();
-        m.changeScene("AddCar.fxml",600,400);
+        m.changeScene("ManageCar.fxml",600,400);
     }
 
     @FXML

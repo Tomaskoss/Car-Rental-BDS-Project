@@ -13,7 +13,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class AddCarController {
+public class ManageCarController {
 
     @FXML
     private Button Add;

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #383b3c;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.but.feec.bds_projekt_3.Controller.AddCarController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #383b3c;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.but.feec.bds_projekt_3.Controller.ManageCarController">
    <children>
       <Button fx:id="Back" layoutX="220.0" layoutY="288.0" mnemonicParsing="false" onAction="#BackOnAction" prefHeight="40.0" prefWidth="77.0" style="-fx-background-color: #171d1d;" text="Back" textFill="#cecece">
          <font>
@@ -73,12 +73,12 @@
             <Font name="Tw Cen MT Condensed" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="Delete" layoutX="396.0" layoutY="288.0" mnemonicParsing="false" onAction="#DeleteOnAction" prefHeight="40.0" prefWidth="77.0" style="-fx-background-color: #171d1d;" text="Delete" textFill="#cecece">
+      <Button fx:id="Delete" layoutX="310.0" layoutY="288.0" mnemonicParsing="false" onAction="#DeleteOnAction" prefHeight="40.0" prefWidth="77.0" style="-fx-background-color: #171d1d;" text="Delete" textFill="#cecece">
          <font>
             <Font name="Tw Cen MT Condensed" size="22.0" />
          </font>
       </Button>
-      <Button layoutX="310.0" layoutY="288.0" mnemonicParsing="false" onAction="#UpdateOnAction" style="-fx-background-color: #171d1d;" text="Update" textFill="#cecece">
+      <Button layoutX="396.0" layoutY="288.0" mnemonicParsing="false" onAction="#UpdateOnAction" style="-fx-background-color: #171d1d;" text="Update" textFill="#cecece">
          <font>
             <Font name="Tw Cen MT Condensed" size="22.0" />
          </font>
