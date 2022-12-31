@@ -15,9 +15,9 @@
    <left>
       <AnchorPane prefHeight="400.0" prefWidth="165.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="logoImageView" fitHeight="400.0" fitWidth="174.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="logoImageView" fitHeight="400.0" fitWidth="164.0" layoutX="-40.0" layoutY="-40.0" pickOnBounds="true" translateX="40.0" translateY="40.0">
                <image>
-                  <Image url="@logo.png" />
+                  <Image url="@logo.jpg" />
                </image>
             </ImageView>
          </children>

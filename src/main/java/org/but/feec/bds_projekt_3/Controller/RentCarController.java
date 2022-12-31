@@ -44,7 +44,12 @@ public class RentCarController {
     @FXML
     void RentOnAction(ActionEvent event) throws SQLException {
         // Get the values entered in the text fields
+
         String rentedCarId = rented_car_id_vin_number_.getText();
+        if(rentedCarId.length()!=17){
+            status_message.setText("Error:Vin ID must be exactly 17 characters long!");
+            return;
+        }
         String rentalDate = rental_date.getText();
         String returnDate = return_date.getText();
         Integer customerID = Integer.valueOf(customer_id.getText());

@@ -12,9 +12,9 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #383b3c;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="logoImageView" fitHeight="400.0" fitWidth="201.0" layoutX="-40.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true" translateX="40.0" translateY="40.0">
+            <ImageView fx:id="logoImageView" fitHeight="400.0" fitWidth="164.0" layoutX="-40.0" layoutY="-40.0" pickOnBounds="true" translateX="40.0" translateY="40.0">
                <image>
-                  <Image url="@logo.png" />
+                  <Image url="@logo.jpg" />
                </image>
             </ImageView>
             <Button fx:id="logout" layoutX="225.0" layoutY="300.0" mnemonicParsing="false" onAction="#logOutOnAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #171d1d;" text="Log Out" textFill="#cecece">

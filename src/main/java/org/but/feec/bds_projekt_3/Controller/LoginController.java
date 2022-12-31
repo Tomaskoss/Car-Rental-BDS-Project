@@ -70,7 +70,10 @@ public class LoginController /*implements Initializable*/ {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
-        char[] hashedPassword = hashPassword(password.getText().toCharArray());
+
+        char[] originalPassword = password.getText().toCharArray();
+        char[] hashedPassword = hashPassword(originalPassword);
+
 
         String verifyLogin = "SELECT count(1) FROM mydb.customer WHERE username ='" + username.getText() + "'AND password ='" + password.getText() + "'";
         try {
