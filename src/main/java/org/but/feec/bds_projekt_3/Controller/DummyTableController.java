@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.but.feec.bds_projekt_3.App;
 import org.but.feec.bds_projekt_3.Data.DummyCustomer;
@@ -20,9 +21,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 public class DummyTableController implements Initializable {
 
     @FXML
@@ -32,10 +32,13 @@ public class DummyTableController implements Initializable {
     private Button confirm;
 
     @FXML
+    private Label status_message;
+
+    @FXML
     private TableView<DummyCustomer> dummy_customer_view;
 
     @FXML
-    private TableColumn<DummyCustomer, String> email;
+    private TableColumn<DummyCustomer, Integer> id;
 
     @FXML
     private TableColumn<DummyCustomer, String> name;
@@ -47,6 +50,8 @@ public class DummyTableController implements Initializable {
 
     ObservableList<DummyCustomer> dummyCustomersObservableList = FXCollections.observableArrayList();
 
+    private static final Logger logger = LoggerFactory.getLogger(DummyTableController.class);
+
     @FXML
     void BackToMenuOnAction(ActionEvent event) throws IOException {
         App m = new App();
@@ -55,16 +60,27 @@ public class DummyTableController implements Initializable {
 
     @FXML
     void ConfirmOnAction(ActionEvent event) throws SQLException {
-        DatabaseConnection connectNow = new DatabaseConnection();
+
         String input = inputField.getText();
-        String query = "SELECT * FROM mydb.dummy_customer WHERE name = ?";
-        try {Connection connection = connectNow.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, input);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            // process the result set
-        }catch (SQLException e) {
-            Logger.getLogger(DummyTableController.class.getName()).log(Level.SEVERE, null, e);
+
+        try {
+            DatabaseConnection connectNow = new DatabaseConnection();
+            Connection connection = connectNow.getConnection();
+            String query = "SELECT * FROM mydb.dummy_customer "+"WHERE id ="+input;
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            ObservableList<DummyCustomer> filteredCustomers = FXCollections.observableArrayList();
+            while (resultSet.next()) {
+                String name = resultSet.getString("name");
+                String surname = resultSet.getString("surname");
+                Integer id = resultSet.getInt("id");
+                filteredCustomers.add(new DummyCustomer(name, surname, id));
+            }
+            dummy_customer_view.setItems(filteredCustomers);
+            status_message.setText("Executed Query");
+        } catch (SQLException e) {
+            logger.error("Error connecting to the database or executing the query {}", e);
         }
     }
 
@@ -73,34 +89,34 @@ public class DummyTableController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        status_message.setText("ready for your statement");
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = null;
         try{
             connectDB = connectNow.getConnection();
-            String dummycustomerQuery="SELECT name,surname,email FROM mydb.dummy_customer";
+            String dummycustomerQuery="SELECT name,surname,id FROM mydb.dummy_customer";
             Statement statement = connectDB.createStatement();
             ResultSet queryOutput = statement.executeQuery(dummycustomerQuery);
             
             while ( queryOutput.next()){
                 String queryName = queryOutput.getString("name");
                 String querySurname = queryOutput.getString("surname");
-                String queryEmail = queryOutput.getString("email");
+                Integer queryId = queryOutput.getInt("id");
 
                 //Populate the ObservableList
-                dummyCustomersObservableList.add(new DummyCustomer(queryName,querySurname,queryEmail));
+                dummyCustomersObservableList.add(new DummyCustomer(queryName,querySurname,queryId));
             }
 
             // PropertyValueFactory corresponds to the new DummyCustomer fields
             // The table column is the one you annotate above
             name.setCellValueFactory(new PropertyValueFactory<>("name"));
             surname.setCellValueFactory(new PropertyValueFactory<>("surname"));
-            email.setCellValueFactory(new PropertyValueFactory<>("email"));
+            id.setCellValueFactory(new PropertyValueFactory<>("id"));
 
             dummy_customer_view.setItems(dummyCustomersObservableList);
 
         }catch(SQLException e){
-            Logger.getLogger(DummyTableController.class.getName()).log(Level.SEVERE,null,e);
-            e.printStackTrace();
+            logger.error("Error connecting to the database or executing the query {}", e);
         }
     }
 }

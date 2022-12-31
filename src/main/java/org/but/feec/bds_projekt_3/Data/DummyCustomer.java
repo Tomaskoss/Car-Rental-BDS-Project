@@ -2,17 +2,19 @@ package org.but.feec.bds_projekt_3.Data;
 
 public class DummyCustomer {
     String name, surname, email, username;
-    Integer phone,age;
+    Integer phone,age,id;
 
-    public DummyCustomer(String name, String surname, String email) {
+    public DummyCustomer(String name, String surname,Integer id) {
         this.name = name;
         this.surname = surname;
-        this.email = email;
+        this.id=id;
     }
 
-    public String getName() {
-        return name;
-    }
+    public Integer getId() {return id;}
+
+    public void setId(Integer id) {this.id = id;}
+
+    public String getName() {return name;}
 
     public void setName(String name) {
         this.name = name;

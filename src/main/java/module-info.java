@@ -4,6 +4,8 @@ module vut.bds_projekt_3 {
     requires javafx.fxml;
     requires javafx.graphics;
     requires java.sql;
+    requires org.slf4j;
+    requires de.mkammerer.argon2.nolibs;
 
 
     opens org.but.feec.bds_projekt_3 to javafx.fxml;

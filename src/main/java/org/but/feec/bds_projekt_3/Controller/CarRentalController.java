@@ -19,7 +19,9 @@ import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 public class CarRentalController implements Initializable {
 
@@ -61,6 +63,8 @@ public class CarRentalController implements Initializable {
 
     ObservableList<Car> carObservableList = FXCollections.observableArrayList();
 
+    private static final Logger logger = LoggerFactory.getLogger(CarRentalController.class);
+
     @FXML
     void AddCarOnAction(ActionEvent event) throws IOException {
         App m = new App();
@@ -90,6 +94,7 @@ public class CarRentalController implements Initializable {
         Connection connectDB = null;
         try {
             connectDB = connectNow.getConnection();
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -163,8 +168,7 @@ public class CarRentalController implements Initializable {
 
 
         } catch (SQLException e) {
-            Logger.getLogger(CarRentalController.class.getName()).log(Level.SEVERE,null,e);
-            e.printStackTrace();
+            logger.error("Error connecting to the database or executing the query {}", e);
         }
     }
 }

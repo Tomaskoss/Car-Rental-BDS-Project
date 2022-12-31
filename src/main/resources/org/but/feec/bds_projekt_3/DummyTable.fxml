@@ -17,7 +17,7 @@
                     <columns>
                         <TableColumn fx:id="name" prefWidth="130.0" text="Name" />
                         <TableColumn fx:id="surname" prefWidth="130.0" text="Surname" />
-                        <TableColumn fx:id="email" prefWidth="149.0" text="Email" />
+                        <TableColumn fx:id="id" prefWidth="149.0" text="id" />
                     </columns>
                 </TableView>
             </children>
@@ -31,6 +31,11 @@
                         <Font name="Tw Cen MT Condensed" size="20.0" />
                     </font>
                 </Button>
+            <Label fx:id="status_message" layoutX="263.0" layoutY="7.0" prefHeight="73.0" prefWidth="500.0" textFill="#cecece" wrapText="true">
+               <font>
+                  <Font name="Tw Cen MT Condensed" size="20.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
     </bottom>

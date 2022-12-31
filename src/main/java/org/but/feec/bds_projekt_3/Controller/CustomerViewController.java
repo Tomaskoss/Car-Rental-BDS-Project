@@ -15,6 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import org.but.feec.bds_projekt_3.App;
 import org.but.feec.bds_projekt_3.Data.CustomerView;
 import org.but.feec.bds_projekt_3.config.DatabaseConnection;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,8 +24,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 public class CustomerViewController implements Initializable {
 
@@ -57,6 +59,7 @@ public class CustomerViewController implements Initializable {
 
     ObservableList<CustomerView> customerViewObservableList = FXCollections.observableArrayList();
 
+    private static final Logger logger = LoggerFactory.getLogger(CustomerViewController.class);
 
     @FXML
     void BackToMenuOnAction(ActionEvent event) throws IOException {
@@ -142,8 +145,7 @@ public class CustomerViewController implements Initializable {
             customer_view.setItems(sortedData);
 
         }    catch (SQLException e) {
-            Logger.getLogger(CustomerViewController.class.getName()).log(Level.SEVERE,null,e);
-            e.printStackTrace();
+            logger.error("Error connecting to the database or executing the query", e);
         }
     }
 }

@@ -13,11 +13,19 @@ import org.but.feec.bds_projekt_3.config.DatabaseConnection;
 
 
 
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Arrays;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import static org.but.feec.bds_projekt_3.config.Argon2FactoryService.ARGON2;
+
 
 public class LoginController /*implements Initializable*/ {
 
@@ -39,13 +47,7 @@ public class LoginController /*implements Initializable*/ {
     @FXML
     private TextField username;
 
-
-   /* @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        File logoFile = new File("logo.png");
-        Image logoImage = new Image(logoFile.toURI().toString());
-        logoImageView.setImage(logoImage);
-    }*/
+    private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     public void cancelOnAction(ActionEvent event) {
         Stage stage = (Stage) cancel.getScene().getWindow();
@@ -60,7 +62,6 @@ public class LoginController /*implements Initializable*/ {
             status_message.setText("please enter credential");
         } else {
             status_message.setText("wrong credential");
-
         }
     }
 
@@ -68,6 +69,8 @@ public class LoginController /*implements Initializable*/ {
         App m = new App();
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
+
+        char[] hashedPassword = hashPassword(password.getText().toCharArray());
 
         String verifyLogin = "SELECT count(1) FROM mydb.customer WHERE username ='" + username.getText() + "'AND password ='" + password.getText() + "'";
         try {
@@ -77,17 +80,19 @@ public class LoginController /*implements Initializable*/ {
             while(queryResult.next()){
                 if (queryResult.getInt(1) ==1 ){
                     status_message.setText("congrats!");
-                    m.changeScene("AfterLogin.fxml",600,400);
-
-                }else{
+                    m.changeScene("AfterLogin.fxml",600,400);}else{
                     status_message.setText("Invalid Login, please try again");
-
+                    System.out.println(hashedPassword);
                 }
-
             }
+        } catch (SQLException e) {
+            logger.error("Error connecting to the database or executing the query {}", e);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+         }
     }
+    public char[] hashPassword(char[] password) {
+        return ARGON2.hash(10, 65536, 1, password).toCharArray();
+
+    }
+
 }

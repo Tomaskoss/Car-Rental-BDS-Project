@@ -40,9 +40,9 @@
                <font>
                   <Font name="Tw Cen MT Condensed Extra Bold" size="12.0" />
                </font></TextField>
-            <Label fx:id="status_message" alignment="CENTER" contentDisplay="CENTER" layoutX="46.0" layoutY="130.0" prefHeight="54.0" prefWidth="348.0" textAlignment="CENTER" textFill="#cecece">
+            <Label fx:id="status_message" alignment="CENTER" contentDisplay="CENTER" layoutX="46.0" layoutY="130.0" prefHeight="54.0" prefWidth="348.0" textAlignment="CENTER" textFill="#cecece" wrapText="true">
                <font>
-                  <Font name="Tw Cen MT Condensed Extra Bold" size="28.0" />
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="12.0" />
                </font></Label>
             <Button fx:id="login" layoutX="259.0" layoutY="297.0" mnemonicParsing="false" onAction="#loginOnAction" prefHeight="22.0" prefWidth="83.0" style="-fx-background-color: #171d1d;" text="Log In" textFill="#cecece">
                <font>

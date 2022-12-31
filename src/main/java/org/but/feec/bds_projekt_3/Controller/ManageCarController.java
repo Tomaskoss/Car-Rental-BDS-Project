@@ -7,6 +7,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.but.feec.bds_projekt_3.App;
 import org.but.feec.bds_projekt_3.config.DatabaseConnection;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -42,6 +44,9 @@ public class ManageCarController {
 
     @FXML
     private TextField vehicle_type_id;
+
+    private static final Logger logger = LoggerFactory.getLogger(ManageCarController.class);
+
 
     @FXML
     void AddOnAction(ActionEvent event) throws SQLException {
@@ -91,7 +96,7 @@ public class ManageCarController {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Error connecting to the database or executing the query {}", e);
         }
 
     }
@@ -168,8 +173,7 @@ public class ManageCarController {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Error connecting to the database or executing the query {}", e);
         }
     }
-
 }
