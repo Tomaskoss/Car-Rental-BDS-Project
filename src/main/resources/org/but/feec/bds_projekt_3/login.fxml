@@ -17,7 +17,7 @@
          <children>
             <ImageView fx:id="logoImageView" fitHeight="400.0" fitWidth="164.0" layoutX="-40.0" layoutY="-40.0" pickOnBounds="true" translateX="40.0" translateY="40.0">
                <image>
-                  <Image url="@logo.jpg" />
+                  <Image url="@logo+.png" />
                </image>
             </ImageView>
          </children>
@@ -26,38 +26,38 @@
    <right>
       <AnchorPane prefHeight="400.0" prefWidth="454.0" style="-fx-background-color: #383b3c;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="42.0" layoutY="200.0" text="Username:" textFill="#cecece">
+            <Label layoutX="103.0" layoutY="203.0" text="Username:" textFill="#cecece">
                <font>
                   <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="45.0" layoutY="248.0" text="Password:" textFill="#cecece">
+            <Label layoutX="105.0" layoutY="251.0" text="Password:" textFill="#cecece">
                <font>
                   <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="username" layoutX="193.0" layoutY="205.0" promptText="Username" style="-fx-background-color: #171d1d; -fx-text-fill: #cecece;">
+            <TextField fx:id="username" layoutX="200.0" layoutY="205.0" promptText="Username" style="-fx-background-color: #171d1d; -fx-text-fill: #cecece;">
                <font>
                   <Font name="Tw Cen MT Condensed Extra Bold" size="12.0" />
                </font></TextField>
             <Label fx:id="status_message" alignment="CENTER" contentDisplay="CENTER" layoutX="46.0" layoutY="130.0" prefHeight="54.0" prefWidth="348.0" textAlignment="CENTER" textFill="#cecece" wrapText="true">
                <font>
-                  <Font name="Tw Cen MT Condensed Extra Bold" size="12.0" />
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="24.0" />
                </font></Label>
-            <Button fx:id="login" layoutX="259.0" layoutY="297.0" mnemonicParsing="false" onAction="#loginOnAction" prefHeight="22.0" prefWidth="83.0" style="-fx-background-color: #171d1d;" text="Log In" textFill="#cecece">
+            <Button fx:id="login" layoutX="239.0" layoutY="297.0" mnemonicParsing="false" onAction="#loginOnAction" prefHeight="22.0" prefWidth="83.0" style="-fx-background-color: #171d1d;" text="Log In" textFill="#cecece">
                <font>
                   <Font name="Tw Cen MT Condensed" size="12.0" />
                </font></Button>
-            <Button fx:id="cancel" layoutX="152.0" layoutY="297.0" mnemonicParsing="false" onAction="#cancelOnAction" prefHeight="22.0" prefWidth="83.0" style="-fx-background-color: #171d1d;" text="Cancel" textFill="#cecece">
+            <Button fx:id="cancel" layoutX="118.0" layoutY="297.0" mnemonicParsing="false" onAction="#cancelOnAction" prefHeight="22.0" prefWidth="83.0" style="-fx-background-color: #171d1d;" text="Cancel" textFill="#cecece">
                <font>
                   <Font name="Tw Cen MT Condensed" size="12.0" />
                </font></Button>
-            <Text layoutX="143.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100RY car rental" textAlignment="CENTER" wrappingWidth="192.47006225585938">
+            <Text layoutX="124.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100RY car rental" textAlignment="CENTER" wrappingWidth="192.47006225585938">
                <font>
-                  <Font name="Tw Cen MT Condensed" size="36.0" />
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="36.0" />
                </font>
             </Text>
-            <PasswordField fx:id="password" layoutX="193.0" layoutY="253.0" promptText="Password" style="-fx-background-color: #171d1d; -fx-text-fill: #cecece;">
+            <PasswordField fx:id="password" layoutX="200.0" layoutY="253.0" promptText="Password" style="-fx-background-color: #171d1d; -fx-text-fill: #cecece;">
                <font>
                   <Font name="Tw Cen MT Condensed Extra Bold" size="12.0" />
                </font></PasswordField>
