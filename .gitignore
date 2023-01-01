@@ -41,3 +41,4 @@ build/
 /original-my-bds-app.jar
 /my-bds-app.jar
 /logs/app.log
+/logs/app-2022-12-31.log.gz
