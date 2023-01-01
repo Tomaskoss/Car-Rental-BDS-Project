@@ -1,5 +1,7 @@
 package org.but.feec.bds_projekt_3.Controller;
 
+import de.mkammerer.argon2.Argon2;
+import de.mkammerer.argon2.Argon2Factory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -15,16 +17,12 @@ import org.but.feec.bds_projekt_3.config.DatabaseConnection;
 
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Arrays;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.but.feec.bds_projekt_3.config.Argon2FactoryService.ARGON2;
 
 
 public class LoginController /*implements Initializable*/ {
@@ -52,7 +50,7 @@ public class LoginController /*implements Initializable*/ {
     public void cancelOnAction(ActionEvent event) {
         Stage stage = (Stage) cancel.getScene().getWindow();
         stage.close();
-        ;
+
     }
 
     public void loginOnAction(ActionEvent event) throws IOException, SQLException {
@@ -69,33 +67,45 @@ public class LoginController /*implements Initializable*/ {
         App m = new App();
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
-
-
-        char[] originalPassword = password.getText().toCharArray();
-        char[] hashedPassword = hashPassword(originalPassword);
-
-
-        String verifyLogin = "SELECT count(1) FROM mydb.customer WHERE username ='" + username.getText() + "'AND password ='" + password.getText() + "'";
-        try {
-            Statement statement = connectDB.createStatement();
-            ResultSet queryResult = statement.executeQuery(verifyLogin);
-
-            while(queryResult.next()){
-                if (queryResult.getInt(1) ==1 ){
-                    status_message.setText("congrats!");
-                    m.changeScene("AfterLogin.fxml",600,400);}else{
-                    status_message.setText("Invalid Login, please try again");
-                    System.out.println(hashedPassword);
+        // Retrieve the stored hash from the database
+        String storedHash = retrieveHashFromDatabase();
+         try {
+             Argon2 argon2 = Argon2Factory.create();
+             boolean isValid = argon2.verify(storedHash, password.getText());
+                if (isValid) {
+                    // Passwordhash is Valid
+                   m.changeScene("AfterLogin.fxml",600,400);
+                    status_message.setText("username and password is valid");
+                } else {
+                    // Password is not valid
+                    status_message.setText("Username or password is not valid");
                 }
-            }
-        } catch (SQLException e) {
-            logger.error("Error connecting to the database or executing the query {}", e);
 
-         }
-    }
-    public char[] hashPassword(char[] password) {
-        return ARGON2.hash(10, 65536, 1, password).toCharArray();
-
+            } catch (Exception e) {
+                logger.error("Error connecting to the database or executing the query {}", e);
+        }
     }
 
+    public String retrieveHashFromDatabase() throws SQLException {
+        String storedHash = null;
+
+        // Connect to the database
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+        // Prepare the SQL query to retrieve the hash
+        String query = "SELECT hashedpassword FROM mydb.customer WHERE username = ?";
+        PreparedStatement statement = connectDB.prepareStatement(query);
+        statement.setString(1, username.getText());
+
+        // Execute the query and retrieve the hash
+        ResultSet queryResult = statement.executeQuery();
+        if (queryResult.next()) {
+            storedHash = queryResult.getString("hashedpassword");
+            return storedHash;
+        }else {
+            status_message.setText("Username does not exists");
+            return null;
+        }
+    }
 }
