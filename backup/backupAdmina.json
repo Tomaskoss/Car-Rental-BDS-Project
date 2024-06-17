@@ -1,0 +1,42 @@
+{
+    "Servers": {
+        "1": {
+            "Name": "mydb",
+            "Group": "Servers",
+            "Host": "localhost",
+            "Port": 5432,
+            "MaintenanceDB": "postgres",
+            "Username": "postgres",
+            "SSLMode": "prefer",
+            "SSLCompression": 0,
+            "Timeout": 10,
+            "UseSSHTunnel": 0,
+            "TunnelPort": "22",
+            "TunnelAuthentication": 0
+        },
+        "2": {
+            "Name": "PostgreSQL 15",
+            "Group": "Servers",
+            "Host": "localhost",
+            "Port": 5432,
+            "MaintenanceDB": "postgres",
+            "Username": "postgres",
+            "SSLMode": "prefer",
+            "Comment": "Auto-detected PostgreSQL 15 installation with the data directory at C:\\Program Files\\PostgreSQL\\15\\data"
+        },
+        "3": {
+            "Name": "AppUser",
+            "Group": "Servers",
+            "Host": "localhost",
+            "Port": 5432,
+            "MaintenanceDB": "postgres",
+            "Username": "db-rental",
+            "SSLMode": "prefer",
+            "SSLCompression": 0,
+            "Timeout": 10,
+            "UseSSHTunnel": 0,
+            "TunnelPort": "22",
+            "TunnelAuthentication": 0
+        }
+    }
+}

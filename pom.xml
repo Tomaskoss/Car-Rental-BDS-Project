@@ -142,7 +142,7 @@
                                     </manifestEntries>
                                 </transformer>
                             </transformers>
-                            <outputDirectory>../Bds_projekt_3</outputDirectory>
+                            <outputDirectory>../bds-project-assignment-3</outputDirectory>
                             <finalName>my-bds-app</finalName>
                         </configuration>
                     </execution>

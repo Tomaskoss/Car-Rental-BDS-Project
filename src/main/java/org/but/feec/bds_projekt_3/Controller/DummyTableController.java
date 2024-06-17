@@ -66,7 +66,7 @@ public class DummyTableController implements Initializable {
         try {
             DatabaseConnection connectNow = new DatabaseConnection();
             Connection connection = connectNow.getConnection();
-            String query = "SELECT * FROM mydb.dummy_customer "+"WHERE id ="+input;
+            String query = "SELECT * FROM mydb.dummy_customer "+"WHERE id =1"+input;
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
@@ -94,7 +94,7 @@ public class DummyTableController implements Initializable {
         Connection connectDB = null;
         try{
             connectDB = connectNow.getConnection();
-            String dummycustomerQuery="SELECT name,surname,id FROM mydb.dummy_customer";
+            String dummycustomerQuery="SELECT name,surname,id FROM mydb.dummy_customer WHERE id=1";
             Statement statement = connectDB.createStatement();
             ResultSet queryOutput = statement.executeQuery(dummycustomerQuery);
             

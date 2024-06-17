@@ -11,7 +11,7 @@ import org.but.feec.bds_projekt_3.config.DatabaseConnection;
 import java.io.IOException;
 import java.sql.*;
 
-public class RentCarController {
+public class  RentCarController {
 
     @FXML
     private Button Back;
